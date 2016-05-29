@@ -13,9 +13,10 @@ run	apt-get update
 run     apt-get -y install wget
 run     wget --no-check-certificate https://launchpad.net/ubuntu/+archive/primary/+files/tzdata-java_2016d-0ubuntu0.14.04_all.deb
 run     dpkg -i tzdata-java_2016d-0ubuntu0.14.04_all.deb
-run	apt-get install -y x11vnc xvfb firefox icedtea-6-plugin icedtea-netx openjdk-6-jre openjdk-6-jre-headless tzdata-java
+run	apt-get install -y x11vnc xvfb firefox icedtea-6-plugin icedtea-netx openjdk-6-jre openjdk-6-jre-headless tzdata-java openbox
 run	mkdir ~/.vnc
-# Setup a password
-run	x11vnc -storepasswd 1234 ~/.vnc/passwd
+
 # Autostart firefox (might not be the best way to do it, but it does the trick)
-run	bash -c 'echo "firefox" >> ~/.bashrc'
+run     bash -c 'echo "exec openbox-session &" >> ~/.xinitrc'
+run	bash -c 'echo "firefox" >> ~/.xinitrc'
+run     bash -c 'chmod 755 ~/.xinitrc'
