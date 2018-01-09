@@ -14,8 +14,8 @@ run	apt-get install -y x11vnc xvfb openbox
 
 # Install the specific tzdata-java we need
 run     apt-get -y install wget
-run     wget --no-check-certificate https://launchpad.net/ubuntu/+archive/primary/+files/tzdata-java_2016d-0ubuntu0.14.04_all.deb
-run     dpkg -i tzdata-java_2016d-0ubuntu0.14.04_all.deb
+run     wget --no-check-certificate https://launchpad.net/ubuntu/+archive/primary/+files/tzdata-java_2016j-0ubuntu0.14.04_all.deb
+run     dpkg -i tzdata-java_2016j-0ubuntu0.14.04_all.deb
 run     apt-get install -y tzdata
 
 # Install Firefox and Java Plugins
